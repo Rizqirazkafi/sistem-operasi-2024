@@ -27,12 +27,23 @@ Pada sistem operasi modern, BIOS/UEFI tidak akan memuat kernel sistem operasi se
 **GRand Unified Bootloader 2** yang sekarang menjadi bootloader utama untuk mayoritas distribusi GNU/Linux. GRUB2 adalah program yang membuat komputer cukup pintar untuk mencari kernel sistem operasi dan memasukkannya kedalam memori.\
 Pada BIOS, GRUB2 akan di install pada Master Boot Record (MBR) pada sektor 512-byte awal disamping tabel partisi pada HDD/SSD.
 GRUB2 mendukung sistem baik dengan Legacy BIOS maupun UEFI.\
-**Systemd boot**
+**Systemd boot** adalah bootloader alternatif dari GRUB. systemd-boot dikhususkan untuk hardware dan sistem operasi berbasis UEFI. Cara kerjanya hampir sama dengan GRUB. Namun daripada menggunakan MBR, systemd-boot menggunakan GPT agar bisa digunakan.
+
 
 ## GNU/Linux
 
 ## Praktikum 1.1
 
+### Instalasi Ubuntu
+**Persiapan:**
+1. Device dengan spesifikasi minimum 4 Core CPU, 8GB RAM, 50GB Free-space, 8GB USB.
+1. Mahasiswa menginstall salah satu Virtual-Machine Manager ([VirtualBox](https://www.virtualbox.org/wiki/Downloads), [VMware](https://www.vmware.com/products/workstation-player.html), [virt-manager](https://virt-manager.org/))
+1. Mahasiswa mendownload ISO salah satu distribusi GNU/Linux (Disarankan [Ubuntu](https://ubuntu.com/desktop)).
+
+**Membuat bootable device**
+1. Download [Ventoy](https://www.ventoy.net/en/download.html) untuk membuat bootable device.
+1. Extract archive dengan [WinRAR](https://www.rarlab.com/download.htm), [Peazip](https://peazip.github.io/index.html), atau [GNU tar](https://savannah.gnu.org/git/?group=tar).
+1. Jalankan executable ventoy-GUI.
 ## Todo
 [  ] Melengkapi Linux Boot Process dengan gambar dan penjelasan\
 [  ] Melengkapi definisi dan penjelasan terkait sistem operasi GNU/Linux\
