@@ -17,6 +17,13 @@ Untuk peta dari Linux Kernel bisa diakses [Linux Kernel Map](https://makelinux.g
 
 ## Linux Boot Process
 
+### BIOS/UEFI POST Test
+POST (Power On Self Test). Pada tahap ini, setelah tombol **power** ditekan, sistem akan menjalankan serangkaian tes untuk memastikan semua hardware berjalan dengan baik. Proses ini meliputi tes CPU, RAM, Disk (HDD/SSD), GPU, dsb. Sebagian vendor motherboard juga melakukan pengecekan terhadap kehadiran mouse dan/atau keyboard untuk POST test.\
+Untuk motherboard yang menggunakan BIOS (Basic Input Output System) akan mencari disk yang memiliki file bootable pada bagian awal sektor untuk memulai sistem operasi.\
+Pada sistem UEFI (Unified Extensible Firmware Interface), firmware akan mencari partisi EFI yang menggunakan filesystem FAT-32. Dalam partisi tersebut, firmware akan mencari file sistem operasi dengan format .efi yang mengarah pada kernel sistem operasi tersebut dan menyerahkan proses kepada kernel.
+
+### GRUB2/Systemd Boot
+GRand Unified Bootloader 2 yang sekarang menjadi bootloader utama untuk mayoritas distribusi GNU/Linux. GRUB2 adalah program yang membuat komputer cukup pintar untuk mencari kernel sistem operasi dan memasukkannya kedalam memori.
 
 ## GNU/Linux
 
