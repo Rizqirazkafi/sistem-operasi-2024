@@ -1,5 +1,26 @@
 # Linux
 
+## Praktikum 1.1
+
+### Instalasi Ubuntu
+**Persiapan:**
+1. Device dengan spesifikasi minimum 4 Core CPU, 8GB RAM, 50GB Free-space, 8GB USB.
+1. Mahasiswa menginstall salah satu Virtual-Machine Manager ([VirtualBox](https://www.virtualbox.org/wiki/Downloads), [VMware](https://www.vmware.com/products/workstation-player.html), [virt-manager](https://virt-manager.org/))
+1. Mahasiswa mendownload ISO salah satu distribusi GNU/Linux (Disarankan [Ubuntu](https://ubuntu.com/desktop)).
+
+**Membuat bootable device**
+1. Download [Ventoy](https://www.ventoy.net/en/download.html) untuk membuat bootable device.
+1. Extract archive dengan [WinRAR](https://www.rarlab.com/download.htm), [Peazip](https://peazip.github.io/index.html), atau [GNU tar](https://savannah.gnu.org/git/?group=tar).
+1. Jalankan executable ventoy-GUI.
+1. Ubah flashdisk menjadi ventoy device
+1. Copy ISO kedalam flashdisk
+
+**Instalasi**
+1. Tancapkan flashdisk ke port USB sebelum menyalakan PC
+1. Tekan/spam/tahan tombol BIOS
+1. Ubah boot order ke USB device
+1. Simpan dan keluar
+
 ## Definisi dan Sejarah
 [Linux](https://en.wikipedia.org/wiki/Linux_kernel/) awalnya adalah kernel yang ditulis oleh [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds).
 Kernel ini pada awalnya ditulis oleh Linus untuk pribadi yang terinspirasi dari UNIX. Linus memulai dengan task switcher dalam bahasa intel 80386 assembly dan sebuah driver terminal pada 25 Agustus 1991.\
@@ -13,39 +34,14 @@ Linux juga di desain dengan sifat modular, dimana kita bisa memasukkan dan melep
 Linux kernel berperan sebagai media komunikasi antara user space dengan hardware. Segala aktivitas yang kita lakukan didepan layar akan dilempar ke kernel menggunakan system call sebagai request yang kemudian diteruskan ke hardware dimana permintaan kita diproses.
 ![Penggambaran Linux](https://upload.wikimedia.org/wikipedia/commons/3/3a/Linux_kernel_ubiquity.svg)
 
-Untuk peta dari Linux Kernel bisa diakses [Linux Kernel Map](https://makelinux.github.io/kernel/map/)\
-
-## Linux Boot Process
-
-### BIOS/UEFI POST Test
-POST (Power On Self Test). Pada tahap ini, setelah tombol **power** ditekan, sistem akan menjalankan serangkaian tes untuk memastikan semua hardware berjalan dengan baik. Proses ini meliputi tes CPU, RAM, Disk (HDD/SSD), GPU, dsb. Sebagian vendor motherboard juga melakukan pengecekan terhadap kehadiran mouse dan/atau keyboard untuk POST test.\
-Untuk motherboard yang menggunakan BIOS (Basic Input Output System) akan mencari disk yang memiliki file bootable pada bagian awal sektor untuk memulai sistem operasi.\
-Pada sistem UEFI (Unified Extensible Firmware Interface), firmware akan mencari partisi EFI yang menggunakan filesystem FAT-32. Dalam partisi tersebut, firmware akan mencari file sistem operasi dengan format .efi yang mengarah pada kernel sistem operasi tersebut dan menyerahkan proses kepada kernel.
-
-### GRUB2/Systemd Boot
-Pada sistem operasi modern, BIOS/UEFI tidak akan memuat kernel sistem operasi secara mandiri. Tugas ini kini diserahkan sepenuhnya ke bootloader pihak ketiga yang memiliki kompatibilitas dengan BIOS/UEFI.\
-**GRand Unified Bootloader 2** yang sekarang menjadi bootloader utama untuk mayoritas distribusi GNU/Linux. GRUB2 adalah program yang membuat komputer cukup pintar untuk mencari kernel sistem operasi dan memasukkannya kedalam memori.\
-Pada BIOS, GRUB2 akan di install pada Master Boot Record (MBR) pada sektor 512-byte awal disamping tabel partisi pada HDD/SSD.
-GRUB2 mendukung sistem baik dengan Legacy BIOS maupun UEFI.\
-**Systemd boot** adalah bootloader alternatif dari GRUB. systemd-boot dikhususkan untuk hardware dan sistem operasi berbasis UEFI. Cara kerjanya hampir sama dengan GRUB. Namun daripada menggunakan MBR, systemd-boot menggunakan GPT agar bisa digunakan.
+Untuk peta dari Linux Kernel bisa diakses [Linux Kernel Map](https://makelinux.github.io/kernel/map/)
 
 
-## GNU/Linux
+## User Space Distribusi GNU/Linux
 
-## Praktikum 1.1
 
-### Instalasi Ubuntu
-**Persiapan:**
-1. Device dengan spesifikasi minimum 4 Core CPU, 8GB RAM, 50GB Free-space, 8GB USB.
-1. Mahasiswa menginstall salah satu Virtual-Machine Manager ([VirtualBox](https://www.virtualbox.org/wiki/Downloads), [VMware](https://www.vmware.com/products/workstation-player.html), [virt-manager](https://virt-manager.org/))
-1. Mahasiswa mendownload ISO salah satu distribusi GNU/Linux (Disarankan [Ubuntu](https://ubuntu.com/desktop)).
 
-**Membuat bootable device**
-1. Download [Ventoy](https://www.ventoy.net/en/download.html) untuk membuat bootable device.
-1. Extract archive dengan [WinRAR](https://www.rarlab.com/download.htm), [Peazip](https://peazip.github.io/index.html), atau [GNU tar](https://savannah.gnu.org/git/?group=tar).
-1. Jalankan executable ventoy-GUI.
 ## Todo
-[  ] Melengkapi Linux Boot Process dengan gambar dan penjelasan\
 [  ] Melengkapi definisi dan penjelasan terkait sistem operasi GNU/Linux\
 [  ] Membuat modul praktikum untuk mahasiswa
 
