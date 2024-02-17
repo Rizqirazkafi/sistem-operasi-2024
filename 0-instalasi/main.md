@@ -23,6 +23,7 @@
 1. Nyalakan kembali PC
 
 **Persiapan Instalasi VirtualBox**
+Versi yang digunakan pada dokumen ini adalah VirtualBox Versi 7
 1. Buat Virtual Machine baru
 ![new](./images/virtualbox/1.png)
 1. Beri nama VM (Bebas)
