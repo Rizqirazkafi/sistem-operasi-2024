@@ -1,5 +1,10 @@
 # Dasar Penggunaan Terminal GNU/Linux
 Pada dokumen ini, akan diberikan dasar-dasar penggunaan terminal.
+Pembelajaran Terminal dilakukan karena mengetikkan perintah lebih cepat
+daripada mengakses menggunakan GUI. Mayoritas server juga hanya menggunakan
+shell tanpa GUI untuk meringankan beban kerja server. Dengan mempelajari
+Terminal/Shell, kita juga bisa merangkai perintah yang dibuat untuk menjalankan
+rangkaian tugas sebagai otomasi.
 
 ## Definisi
 [Terminal Emulator](https://en.wikipedia.org/wiki/Terminal_emulator) atau
@@ -36,6 +41,7 @@ kali ini, kita hanya akan menggunakan Bash sebagai shell yang paling banyak dipa
 sebagai shell bawaan distribusi GNU/Linux.
 
 ## Komponen Shell (BASH)
+Gunakan <kbd>ctrl</kbd> + <kbd>t</kbd> membuka Terminal pada Ubuntu GNOME Desktop.
 Dalam shell, kita bisa melihat beberapa komponen yaitu username@host-name,
 kemudian diikuti oleh tanda "~" yang menandakan bahwa kita sekarang sedang berada
 di HOME directory user kita. Kemudian ada tanda dollar (\$) yang menandakan bahwa
@@ -50,7 +56,6 @@ miliki di sesi terminal.
 
 ### Shortcut/Keybinding Pada Terminal
 
-Gunakan <kbd>ctrl</kbd> + <kbd>t</kbd> membuka Terminal pada Ubuntu GNOME Desktop.
 
 |Shortcut | Fungsi|
 |---------|-------|

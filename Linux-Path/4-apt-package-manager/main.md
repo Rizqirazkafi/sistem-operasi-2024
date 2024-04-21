@@ -1,6 +1,10 @@
 # Package Manager
 
-## Apa itu package/paket? Source code dari sebuah perangkat lunak akan dikompilasi/dicompile kedalam bentuk binary oleh pengembang. Baik source code maupun binary akan dikemas dalam format tertentu oleh distribusi GNU/Linux untuk di distribusikan. Bentuk kemasan inilah yang disebut __Package/paket__.
+## Apa itu package/paket? 
+Source code dari sebuah perangkat lunak akan dikompilasi/dicompile kedalam bentuk 
+binary oleh pengembang. Baik source code maupun binary akan dikemas dalam 
+format tertentu oleh distribusi GNU/Linux untuk di distribusikan. 
+Bentuk kemasan inilah yang disebut __Package/paket__.
 Untuk format pendistribusiannya, bagi paket yang berisi source code biasanya
 akan berformat .tar.gz, sedangkan untuk yang sudah berupa binary akan 
 menggunakan format .deb untuk distribusi berbasis Debian dan Ubuntu.
