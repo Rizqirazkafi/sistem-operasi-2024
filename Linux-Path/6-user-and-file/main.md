@@ -74,3 +74,39 @@ su newuser
 <!-- # check group -->
 <!-- getent group -->
 <!-- ``` -->
+
+## File Ownership and Permission
+Setiap file dan directory di Linux punya tiga permission berikut untuk tiga jenis
+pemilik:
+
+__Permission for files__
+* Read - Dapat melihat dan menyalin konten file
+* Write - Dapat memodifikasi konten file
+* Execute - Dapat menjalankan file (Apabila merupakan executable)
+
+__Permission for directories__
+* Read - Dapat melihat dan menyalin semua file dalam directory
+* Write - Dapat menambah atau menghapus file dalam directory (Butuh izin Excute juga)
+* Execute - Dapat masuk ke directory
+
+Kita bisa mnggunakan perintah `stat` atau `ls` untuk mengetahui file permission.
+Apabila kita menggunakan `ls -l` pada sebuah file, maka output akan seperti berikut:
+```bash
+-rwxrw-r-- 1 abhi itsfoss 457 Aug 10 11:55 agatha.txt
+```
+
+Bila digambarkan, maka seperti ini:
+![filepermission](https://linuxhandbook.com/content/images/2020/06/file-permission-explanation-1-1.png)
+
+* File type: Menunjukkan tipe file. d berarti directory, - berarti file biasa
+* Permission: Bagian ini menunjukkan permission dari file
+* Hard link count: Menunjukkan apabila file memiliki hard link, default dihitung satu.
+* User: User pemilik file.
+* Group: Group yang memiliki akses ke file ini. Hanya satu group yang bisa menjadi pemilik satu file pada satu waktu.
+* File size: ukuran dari file dalam bytes
+* Modification time: waktu dan tanggal terakhir kali file dimodifikasi
+* Filename : nama file atau directory
+
+Credit to :
+* [linuxhandbook](https://linuxhandbook.com/linux-file-permissions/)
+* [phoenixap](https://phoenixnap.com/kb/user-management-linux)
