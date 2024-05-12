@@ -107,6 +107,22 @@ Bila digambarkan, maka seperti ini:
 * Modification time: waktu dan tanggal terakhir kali file dimodifikasi
 * Filename : nama file atau directory
 
+Dalam perintah diatas, kita melihat file permission ini dalam format 9 digit.
+
+rwxrw-r--
+
+Setiap huruf mencerminkan permission tertentu:
+* r : Read
+* w : Write 
+* x : Execute
+* \- : Tidak di atur permission
+
+Permission selalu diururtkan berdasarkan read, write dan execute, contoh: rwx.
+Kemudian permission ini dikelompokkan ke tiga jenis pemilik dalam urutan User, Group, dan Other.
+
+Ilutsrasi seperti dibawah ini:
+![permission](https://linuxhandbook.com/content/images/2020/06/file-permission-explanation-2-1.png)
+
 Credit to :
 * [linuxhandbook](https://linuxhandbook.com/linux-file-permissions/)
 * [phoenixap](https://phoenixnap.com/kb/user-management-linux)
