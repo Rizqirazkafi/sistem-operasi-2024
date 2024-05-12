@@ -21,6 +21,11 @@ antara lain adalah :
 * VNC
 * RDP
 
+Semua metode Direct Connect menggunakan metode Client<=>Server yang berarti
+ada satu perangkat yang diremote jarak jauh sebagai server / penyedia
+koneksi remote. Dimana setiap perangkat yang terkoneksi dengan server bersifat
+sebagai client.
+
 __Intermediate Connect__ ialah jenis Remote Access yang dimana koneksinya
 bergantung pada layanan pihak ketiga. Koneksi antara satu perangkat dengan
 perangkat lain harus melewati media perantara yang telah disediakan oleh pihak
@@ -38,7 +43,7 @@ Connect adalah:
 |Kendali penuh terhadap protokol dan jaringan | Protokol ditentukan oleh penyedia layanan|
 |Mayoritas gratis dan penggunaan tanpa batas | Beberapa berbayar untuk fitur tertentu|
 
-## Telnet
+## Telnet (Teletype Network)
 __WARNING!!__
 Telnet tidak aman digunakan di production karena tidak menggunakan enkripsi.
 
@@ -56,6 +61,10 @@ Sebuah password sniffer telah terpasang di sebuah server yang terkoneksi secara
 langsung ke backbone, dan ketika ditemukan, memiliki ribuan username dan password
 di databasenya.
 
+SSH memungkinkan kita mengakses shell secara remote tanpa harus mengakses terminal
+fisik. Ini menjadi solusi yang mutakhir karena server tidak perlu menjalankan 
+sistem grafis sehingga mengurangi beban kerja server.
+
 Kini SSH digunakan untuk memanajemen lebih dari setengah infrastruktur di internet,
 baik itu on premise maupun cloud. SSH digunakan karena dinilai dan terbukti
 cara paling mudah dan aman untuk memberikan akses secara remote ke sistem operasi.
@@ -67,7 +76,42 @@ Untuk membuat SSH server di Ubuntu, kita tinggal menginstall paket yang bernama
 sudo apt install openssh-server
 sudo systemctl enable --now ssh
 ```
+
+Dengan ini, openssh-server sudah dapat kita akses melalui jaringan menggunakan
+openssh-client. Apabila belum terinstall, kita bisa install openssh-client
+menggunakan perintah berikut:
+```bash
+sudo apt install openssh-client
+```
+
+Untuk menyambungkan ke openssh-server, gunakan perintah berikut ini:
+`ssh username@IP` kemudian klik <kbd>Enter</kbd> dan masukkan password user kita.
+
+Secara default, ssh menggunakan port 22 untuk koneksinya. Port ini harus
+kita ganti apabila sudah masuk production karena merupakan port yang mudah
+ditebak oleh hacker. 
+
 Untuk konfigurasi ssh, dapat kita lihat di file `/etc/ssh/sshd_config`.
 Dalam file ini, kita bisa mengatur port, metode login, banner, motd, dll yang bisa
 kita gunakan baik untuk mengamankan SSH maupun mengkostumisasi saat kita masuk ke 
 koneksi SSH.
+
+## VNC (Virtual Network Computing)
+VNC merupakan sistem berbagi desktop grafis yang menggunakan Remote Frame Buffer
+(RFB) untuk mengendalikan komputer lain secara remote. VNC dapat digunakan
+untuk berbagi layar dan tidak harus layar fisik karena VNC server dapat
+berjalan secara _headless_ atau tanpa monitor.
+
+Ada beberapa implementasi VNC diantaranya adalah UltraVNC, RealVNC, dan TightVNC.
+Masing-masing memiliki fitur tersendiri yang dibangun diatas protokol VNC.
+
+Untuk client VNC, ada beberapa yang sering digunakan yaitu Remmina, TigerVNC dan
+RealVNC client. Bahkan kita bisa mengendalikan VNC melalui web browser dengan
+Apache Guacamolle.
+
+### Setup VNC Server di Ubuntu
+Untuk kali ini, kita akan menggunakan tightvncserver untuk melakukan setup
+VNC server
+
+
+
