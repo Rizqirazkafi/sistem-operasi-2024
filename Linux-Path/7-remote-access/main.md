@@ -111,7 +111,39 @@ Apache Guacamolle.
 
 ### Setup VNC Server di Ubuntu
 Untuk kali ini, kita akan menggunakan tightvncserver untuk melakukan setup
-VNC server
+VNC server pada Ubuntu 22.04
+
+Install tightvnc server:
+```bash
+sudo apt install tightvncserver
+```
+
+Kemudian, jalankan perintah `vncserver` untuk membuat password akses VNC, membuat
+file konfigurasi awal, dan memulai server VNC:
+
+```bash
+vncserver
+```
+
+Anda akan diminta untuk memasukkan password dan verifikasi password akses untuk
+mengendalikan sistem operasi secara remote:
+
+```bash
+Output
+You will require a password to access your desktops.
+
+Password:
+Verify:
+```
+>Password harus memiliki panjang 6-8 karakter. Password yang melebihi 8 character
+akan otomatis di potong.
+
+Setelah memverifikasi password, kita akan diberi pilihan untuk membuat view-only
+password. Pengguna yang login dengan view-only password tidak dapat mengendalikan
+VNC dengan keyboard dan mouse. Opsi ini berguna apabila anda ingin mendemonstrasikan
+sesuatu ke orang lain menggunakan VNC server anda, tapi ini tidak diwajibkan.
+
+
 
 
 
